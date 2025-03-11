@@ -1,0 +1,30 @@
+.splash-screen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: black ;
+  /* url('/assets/images/splash.jpg') no-repeat center center; */
+  background-size: contain; /* or 'cover' if you want it to fill the screen */
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 24px;
+  font-weight: bold;
+  z-index: 9999;
+  transition: opacity 1s ease-out;
+}
+
+  
+  .hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+  

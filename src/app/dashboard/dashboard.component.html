@@ -1,0 +1,42 @@
+<div class="dashboard-container">
+    <h1>Upload File</h1>
+  
+    <!-- Dropdown Selection -->
+    <div class="dropdown-container">
+      <label for="company">Select Company:</label>
+      <select id="company" [(ngModel)]="selectedCompany">
+        <option value="" disabled selected>Select a company</option>
+        <option *ngFor="let company of companies" [value]="company">{{ company }}</option>
+      </select>
+    </div>
+  
+    <div class="dropdown-container">
+      <label for="quarter">Select Quarter:</label>
+      <select id="quarter" [(ngModel)]="selectedQuarter">
+        <option value="" disabled selected>Select a quarter</option>
+        <option *ngFor="let quarter of quarters" [value]="quarter">{{ quarter }}</option>
+      </select>
+    </div>
+  
+    <div class="dropdown-container">
+      <label for="year">Select Year:</label>
+      <select id="year" [(ngModel)]="selectedYear">
+        <option value="" disabled selected>Select a year</option>
+        <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+      </select>
+    </div>
+  
+    <!-- File Upload Section -->
+    <div class="file-upload">
+      <label for="fileUpload">Upload File:</label>
+      <input type="file" id="fileUpload" (change)="onFileSelected($event)">
+    </div>
+  
+    <!-- Error Message -->
+    <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+  
+    <!-- Upload Button -->
+    <button (click)="uploadFile()" [disabled]="!selectedCompany || !selectedQuarter || !selectedYear" class="upload-btn">
+      Upload
+    </button>
+  </div>
