@@ -8,14 +8,16 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  overflow: hidden;
 }
 .container {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   width: 100%;
   background-color: black;
   color: white;
   height: 100vh;
+  overflow: hidden;
 }
 .error {
   color: red;
@@ -30,7 +32,7 @@ input.ng-invalid.ng-touched {
 .left-section {
   flex: 1;
   padding: 20px;
-  /* position: relative;  */
+  /* position:relative;  */
    /* Ensures elements stay positioned correctly */
    display: flex;
    flex-direction: column;  /* Aligns elements in a column */
@@ -49,7 +51,8 @@ input.ng-invalid.ng-touched {
   width: 5%;  /* Adjust as needed */
   height: auto;
   margin-top: -15%;
-  margin-bottom: 10px;  /* Space below the logo */
+  margin-bottom: 10px; 
+   /* Space below the logo */
 }
 
 h1 {  
@@ -135,3 +138,7 @@ input {
   font-size: 16px;
   margin-top: 10px;
 }
+p, h1, h2, h3, h4, h5, h6, span ,strong{
+  user-select: none;
+  pointer-events: none;
+} 
