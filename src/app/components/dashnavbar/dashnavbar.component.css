@@ -1,0 +1,30 @@
+.container {
+    height: 100vh;
+  }
+  
+  .spacer {
+    flex: 1 1 auto;
+  }
+  
+  mat-toolbar {
+    background: #1b1b2f;
+    color: white;
+  }
+  
+  mat-sidenav {
+    width: 250px;
+    background: #22223b;
+    color: white;
+  }
+  
+  mat-card {
+    margin: 20px;
+    background: #1b1b2f;
+    color: white;
+  }
+  
+  mat-form-field {
+    width: 200px;
+    margin-right: 10px;
+  }
+  

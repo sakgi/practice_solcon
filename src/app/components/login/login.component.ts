@@ -21,7 +21,7 @@ export class LoginComponent {
     console.log('Password:', this.password);
     if (this.username && this.password.length >= 6) {
       console.log('Login Successful!');
-      this.router.navigate(['/dashboard']);  // ✅ Redirect to "dashboard"
+      this.router.navigate(['/sidebar']);  // ✅ Redirect to "dashboard"
     } else {
       console.log('Invalid login credentials');
     }

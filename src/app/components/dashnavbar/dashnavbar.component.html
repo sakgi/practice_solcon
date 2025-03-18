@@ -1,0 +1,53 @@
+<mat-sidenav-container class="container">
+    <!-- Sidebar Navigation -->
+    <mat-sidenav mode="side" opened>
+      <mat-toolbar>Solcon Capital</mat-toolbar>
+      <mat-nav-list>
+        <a mat-list-item *ngFor="let item of companyList" (click)="selectCompany(item)">
+          {{ item }}
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+  
+    <!-- Main Content -->
+    <mat-sidenav-content>
+      <mat-toolbar>
+        <span>COMPANY LISTS</span>
+        <span class="spacer"></span>
+        <mat-icon>account_circle</mat-icon> Super Admin
+      </mat-toolbar>
+  
+      <div class="breadcrumb">Home | Company Lists | {{ selectedCompany }}</div>
+  
+      <mat-card>
+        <mat-card-content>
+          <form>
+            <mat-form-field appearance="fill">
+              <mat-label>Document Type</mat-label>
+              <mat-select [(value)]="selectedDocType">
+                <mat-option *ngFor="let type of docTypes" [value]="type">{{ type }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+  
+            <mat-form-field appearance="fill">
+              <mat-label>Year</mat-label>
+              <mat-select [(value)]="selectedYear">
+                <mat-option *ngFor="let year of years" [value]="year">{{ year }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+  
+            <mat-form-field appearance="fill">
+              <mat-label>Quarter</mat-label>
+              <mat-select [(value)]="selectedQuarter">
+                <mat-option *ngFor="let quarter of quarters" [value]="quarter">{{ quarter }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+  
+            <button mat-raised-button color="primary">Upload Document</button>
+            <button mat-button (click)="clearFilters()">Clear</button>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

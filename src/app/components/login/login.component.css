@@ -1,24 +1,33 @@
-body {
+html, body {
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box; /* Ensures padding and borders don't add extra space */
+  overflow: hidden; /* Prevent scrollbars */
+}
+
+body {
   font-family: Arial, sans-serif;
   background-color: black;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  overflow: hidden;
+  height: 100vh; /* Ensures the body fills the entire viewport height */
 }
+
+/* The container should fill the viewport and maintain layout */
 .container {
   display: flex;
-  /* justify-content: space-between; */
   width: 100%;
+  height: 100vh; /* Full viewport height */
   background-color: black;
   color: white;
-  height: 100vh;
-  overflow: hidden;
+  overflow: hidden; /* Prevent scrollbars */
 }
+
+/* Error styling */
 .error {
   color: red;
   font-size: 14px;
@@ -29,42 +38,37 @@ input.ng-invalid.ng-touched {
   border: 2px solid red;
 }
 
+/* Left section styling */
 .left-section {
   flex: 1;
   padding: 20px;
-  /* position:relative;  */
-   /* Ensures elements stay positioned correctly */
-   display: flex;
-   flex-direction: column;  /* Aligns elements in a column */
-   align-items: flex-start;  /* Align items to the left */
-   justify-content: flex-start;  /* Center content vertically */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 10px;  /* Space between logo and heading */
+  gap: 10px;
 }
 
-/* 🔹 Logo Styling */
 .logo {
-  width: 5%;  /* Adjust as needed */
+  width: 5%;
   height: auto;
   margin-top: -15%;
-  margin-bottom: 10px; 
-   /* Space below the logo */
+  margin-bottom: 10px;
 }
 
-h1 {  
+h1 {
   background: white;
   color: black;
   display: inline-block;
-  margin-top: 12%  ;
-  margin-left:-4%;
-  /* padding: 5px 10px; */
-  text-align: left;  /* Ensure alignment stays intact */
-  /* margin: 0;   */
-  /* Remove left margin */
+  margin-top: 12%;
+  margin-left: -4%;
+  text-align: left;
+  padding: 5px;
 }
 
 h2 {
@@ -93,6 +97,7 @@ h2 {
   font-size: 16px;
 }
 
+/* Login card styling */
 .login-card {
   background-color: #333;
   padding: 30px;
@@ -103,7 +108,7 @@ h2 {
   margin-right: 10%;
 }
 
-h2 {
+.login-card h2 {
   text-align: center;
 }
 
@@ -138,7 +143,9 @@ input {
   font-size: 16px;
   margin-top: 10px;
 }
-p, h1, h2, h3, h4, h5, h6, span ,strong{
+
+/* Prevents text selection and pointer events */
+p, h1, h2, h3, h4, h5, h6, span, strong {
   user-select: none;
   pointer-events: none;
-} 
+}
