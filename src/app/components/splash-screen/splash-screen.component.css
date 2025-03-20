@@ -1,0 +1,77 @@
+/* Full-screen splash container */
+.splash-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+}
+p, h1, h2, h3, h4, h5, h6, span, strong {
+    user-select: none;
+    pointer-events: none;
+  }
+  
+/* Logo animation */
+.logo {
+    width: 150px; /* Default for desktop */
+    height: auto;
+    position: absolute;
+    animation: moveAndShrink 1s ease-in-out forwards;
+}
+
+/* Keyframes for moving logo from center to top left */
+@keyframes moveAndShrink {
+    0% {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        top: 2%;
+        left: 2%;
+        transform: translate(0, 0) scale(0.4);
+    }
+}
+
+/* Hide splash screen smoothly */
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+}
+
+/* ✅ Responsive Adjustments */
+
+/* For tablets (768px to 1024px) */
+@media (max-width: 1024px) {
+    .logo {
+        width: 120px; /* Slightly smaller */
+    }
+
+    @keyframes moveAndShrink {
+        100% {
+            top: 3%;
+            left: 3%;
+            transform: translate(0, 0) scale(0.5);
+        }
+    }
+}
+
+/* For mobile devices (iPhone, Samsung, etc.) */
+@media (max-width: 768px) {
+    .logo {
+        width: 100px; /* Smaller logo for mobile */
+    }
+
+    @keyframes moveAndShrink {
+        100% {
+            top: 5%;
+            left: 5%;
+            transform: translate(0, 0) scale(0.6);
+           }
+    }
+}
