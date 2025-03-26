@@ -5,17 +5,17 @@ import {
   isDataSource
 } from "./chunk-3VMVIQVD.js";
 import {
+  BidiModule,
+  Directionality
+} from "./chunk-RK4UW2FF.js";
+import {
   Platform,
   RtlScrollAxisType,
   coerceElement,
   coerceNumberProperty,
   getRtlScrollAxisType,
   supportsScrollBehavior
-} from "./chunk-YQ46FIJX.js";
-import {
-  BidiModule,
-  Directionality
-} from "./chunk-RK4UW2FF.js";
+} from "./chunk-EJ5KFXMP.js";
 import {
   DOCUMENT
 } from "./chunk-DM26RC5X.js";
@@ -1561,4 +1561,4 @@ export {
   CdkScrollableModule,
   ScrollingModule
 };
-//# sourceMappingURL=chunk-5GT22QUY.js.map
+//# sourceMappingURL=chunk-6AEHN72A.js.map

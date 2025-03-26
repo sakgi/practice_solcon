@@ -1,8 +1,10 @@
 /* Container Setup */
 .sidenav-container {
-  height: 100vh;
+  height: 90vh;
   border-radius: 0px;
   display: flex;
+  margin-top: 5%;
+  
 }
 /* Hover Effect for Icon and Text */
 mat-nav-list a.mat-list-item:hover {
@@ -186,7 +188,7 @@ mat-expansion-panel mat-list-item {
 }
 
 /* Responsive Breakpoints */
-@media (max-width: 1024px) {
+@media (max-width: 1032px) {
   .sidebar {
     width: 240px;
   }
@@ -216,67 +218,17 @@ mat-expansion-panel mat-list-item {
   }
 } */
 
-@media (max-width: 768px) {/* Container Setup for Mobile */
+@media (max-width: 768px) {
+  /* Container Setup for Mobile */
   .sidenav-container1 {
-    height: 100vh;
+    height: 100vh; /* Full height to fill screen */
     border-radius: 0px;
-    /* display: flex; */
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
-  
-  /* Hover Effect for Icon and Text */
-  mat-nav-list a.mat-list-item:hover {
-    background-color: #1e293b;
-    transition: background-color 0.3s ease;
-  }
-  
-  /* Specific to Icon and Text on Hover */
-  mat-nav-list a.mat-list-item:hover mat-icon,
-  mat-nav-list a.mat-list-item:hover span {
-    color: #38bdf8 !important; /* Light Blue for visibility */
-    transition: color 0.3s ease;
-  }
-  
-  /* Icon and Text Default State */
-  mat-nav-list a.mat-list-item mat-icon,
-  mat-nav-list a.mat-list-item span {
-    color: white !important;
-    transition: color 0.3s ease;
-  }
-  
-  span:hover {
-    background-color: #1e293b;
-  }
-  
-  mat-expansion-panel-header:hover {
-    background-color: #1e293b;
-  }
-  
-  /* Input styles for Mobile */
-  .search1 input {
-    color: white !important;
-    caret-color: white !important;
-    margin: 0 !important;
-  }
-  
-  /* Label styles */
-  .search1 mat-label {
-    color: rgba(255, 255, 255, 0.7);
-    padding: 0 !important;
-    margin: 0 !important;
-  }
-  
-  /* Base style for list items */
-  mat-nav-list a.mat-list-item {
-    color: white !important;
-    background-color: #0F0D20 !important;
-    text-decoration: none;
-    border-radius: 5px;
-  }
-  
-  mat-nav-list a.mat-list-item:hover {
-    background-color: rgba(255, 255, 255, 0.1) !important;
-  }
-  
+
   /* Sidebar Styling for Mobile */
   .sidebar1 {
     width: 240px;
@@ -285,56 +237,136 @@ mat-expansion-panel mat-list-item {
     padding: 10px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     overflow-y: auto;
+    overflow-x: hidden;
     border-radius: 0px !important;
     transition: all 0.3s ease-in-out;
   }
-  
-  /* Logo Container for Mobile */
-  /* .logo-container1 {
-    text-align: center;
-    margin-bottom: 10px;
-  } */
-  
 
-/* Ensure the parent container is positioned relative */
-.logo-container1 {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
+  /* Logo Container */
+  .logo-container1 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
 
-/* Position the close button in the top-right corner */
-.logo-container1 .close-button1 {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: #f44336; /* Red background */
-  color: white; /* White icon color */
-  border: none;
-  /* padding: 10px; */
-  border-radius: 5px; /* Circular button */
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+  .logo-container1 .close-button1 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #f44336;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
 
-/* Hover effect */
-.logo-container1 .close-button1:hover {
-  background-color: #d32f2f; /* Darker red on hover */
-  transform: scale(1.1);
-}
-
-
+  .logo-container1 .close-button1:hover {
+    background-color: #d32f2f;
+    transform: scale(1.1);
+  }
 
   .logo1 {
     width: 50%;
     border-radius: 10px;
     transition: width 0.3s ease;
   }
-  
+
+  /* Profile Section */
+  .profile-section {
+    width: 60px;
+    /* height: 60px; */
+    border-radius: 50%;
+    background-color: #0F0D20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 130%;
+    margin-left: 35%;
+    /* margin: 20px auto 10px; */
+     /* Auto center horizontally */
+    transition: background-color 0.3s ease;
+  }
+
+  /* Profile Icon */
+  .profile-icon {
+    font-size: 50px;
+    color: white;
+  }
+
+  /* Logout Button */
+  .logout-button {
+    font-size: 18px;
+    color: white;
+    background-color: #1e293b;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+    margin-bottom: 10px; /* Slight spacing from bottom */
+    text-align: center;
+    margin-left: 35%;
+  }
+.logout-dropdown
+{
+  text-align: center;
+  margin-top: 2%;
+}
+  /* Hover Effects */
+  .logout-button:hover {
+    background-color: #38bdf8;
+    color: #0F0D20;
+  }
+
+  /* Dropdown Arrow */
+  .dropdown-arrow {
+    color: white;
+    transition: transform 0.3s ease;
+  }
+
+  .dropdown-arrow.rotate {
+    transform: rotate(180deg);
+  }
+
+  /* Dropdown Menu */
+  .dropdown-menu {
+    background-color: #1e293b;
+    border-radius: 5px;
+    margin-top: 5px;
+    padding: 10px;
+    display: none;
+    flex-direction: column;
+    transition: all 0.3s ease;
+  }
+
+  .dropdown-menu.show {
+    display: flex;
+  }
+
+  .dropdown-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .dropdown-menu li {
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .dropdown-menu li:hover {
+    background-color: #334155;
+  }
+
   /* Expansion Panel for Mobile */
   mat-expansion-panel {
     background: #0F0D20 !important;
@@ -344,7 +376,7 @@ mat-expansion-panel mat-list-item {
     overflow: hidden;
     transition: all 0.3s ease;
   }
-  
+
   mat-expansion-panel-header {
     font-weight: bold;
     display: flex;
@@ -354,25 +386,39 @@ mat-expansion-panel mat-list-item {
     color: white !important;
     transition: background 0.3s ease;
   }
-  
-  /* Search Field for Mobile */
+
+  /* Search Input */
   .search1 input {
-    font-size: 14px;
-    padding: 8px;
+    color: white !important;
+    caret-color: white !important;
   }
-  
-  /* Toolbar for Mobile */
+
+  .search1 mat-label {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  /* Hover Effect */
+  mat-nav-list a.mat-list-item:hover {
+    background-color: #1e293b;
+    transition: background-color 0.3s ease;
+  }
+
+  mat-nav-list a.mat-list-item:hover mat-icon,
+  mat-nav-list a.mat-list-item:hover span {
+    color: #38bdf8 !important;
+    transition: color 0.3s ease;
+  }
+
+  mat-nav-list a.mat-list-item mat-icon,
+  mat-nav-list a.mat-list-item span {
+    color: white !important;
+  }
+
+  /* Top Toolbar */
   .top-toolbar1 {
-    background: #0F0D20 !important;
-    color: white !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 10px;
+    background-color: #0F0D20;
+    height: 56px;
+    padding: 0 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
-  
-  
-  /* Menu Button for Mobile */
-  .menu-button1 {
-    color: white !important;
-    margin-right: 10px;
-  }
-}  
+}

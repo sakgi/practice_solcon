@@ -1,3 +1,6 @@
+<app-navbar *ngIf="isDesktopView"></app-navbar>
+
+
 <!-- DESKTOP VIEW -->
 <mat-sidenav-container class="sidenav-container" *ngIf="!isMobile">
   
@@ -48,25 +51,30 @@
         <!-- Poultry Disease Detection (Desktop) -->
       <!-- </span>
     </mat-toolbar> -->
-
+ 
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
 
 <!-- MOBILE VIEW -->
+
+
+
+<!-- MOBILE VIEW -->
 <mat-sidenav-container class="sidenav-container1" *ngIf="isMobile">
-  
+
   <!-- Sidebar -->
   <mat-sidenav #drawer1 mode="over" class="sidebar1" (closedStart)="sidebarClosed()">
-    
-    <!-- Sidebar Header with Close Button -->
-      <div class="logo-container1">
-        <img src="/assets/images/splash.jpg" alt="Company Logo" class="logo1" />
-        <button mat-icon-button class="close-button1" (click)="drawer1.close()">
-          <mat-icon>close</mat-icon>
-        </button>
-      </div>
 
+    <!-- Sidebar Header with Close Button -->
+    <div class="logo-container1">
+      <img src="/assets/images/splash.jpg" alt="Company Logo" class="logo1" />
+      <button mat-icon-button class="close-button1" (click)="drawer1.close()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+
+    <!-- Sidebar Menu -->
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-icon>dashboard</mat-icon>
@@ -94,6 +102,17 @@
         </a>
       </mat-nav-list>
     </mat-expansion-panel>
+
+    <!-- Profile Section (After Company List) -->
+    <div class="profile-section" (click)="toggleDropdown()">
+      <fa-icon [icon]="faUser" class="profile-icon">Logout</fa-icon>
+    </div>
+    
+    <div class="logout-dropdown" [class.show]="showDropdown" (click)="logout()">
+      <span>Logout</span>
+    </div>
+    
+
   </mat-sidenav>
 
   <!-- Main Content -->
@@ -102,11 +121,7 @@
       <button mat-icon-button (click)="drawer1.open()" class="menu-button1">
         <mat-icon>menu</mat-icon>
       </button>
-      <span>
-        <!-- Poultry Disease Detection (Mobile) -->
-      </span>
     </mat-toolbar>
-
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

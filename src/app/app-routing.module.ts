@@ -4,11 +4,13 @@ import { SplashScreenComponent } from './components/splash-screen/splash-screen.
 import { LoginComponent } from './components/login/login.component';
 import {SidebarComponent} from './components/sidebar/sidebar.component';
 import {FileUploadComponent} from './components/file-upload/file-upload.component'
+import {NavbarComponent} from './components/navbar/navbar.component'
 const routes: Routes = [
   { path: '', component: SplashScreenComponent },
   { path: 'login', component: LoginComponent },
   {path: 'sidebar', component:SidebarComponent },
-  {path: 'file-upload', component:FileUploadComponent }
+  {path: 'file-upload', component:FileUploadComponent },
+  {path:'navbar', component:NavbarComponent },
   
   // { path: 'dashboard', component: DashboardComponent },
   

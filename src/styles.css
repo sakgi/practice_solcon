@@ -6,7 +6,7 @@ html, body {
     box-sizing: border-box;
     overflow: hidden; /* Prevents scrollbars */
     font-family: Arial, sans-serif;
-    background-color: black;
+    background-color: #0F0D20;
     color: white;
   }
   

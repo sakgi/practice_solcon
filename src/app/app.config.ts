@@ -7,6 +7,7 @@ import { FileUploadComponent } from './components/file-upload/file-upload.compon
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import {NavbarComponent} from './components/navbar/navbar.component'
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './services/user.service';
 import { MatSelectModule } from '@angular/material/select';
@@ -23,7 +24,8 @@ const routes: Routes = [
     component: SidebarComponent,
     children: [
       { path: 'file-upload', component: FileUploadComponent },  // Child Route
-      { path: '', redirectTo: 'file-upload', pathMatch: 'full' } // Default child
+      { path: '', redirectTo: 'file-upload', pathMatch: 'full' }, // Default child
+      {path:'navbar', component:NavbarComponent },
     ]
   },
   { path: '**', redirectTo: 'sidebar' } // Wildcard to Sidebar

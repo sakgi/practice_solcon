@@ -9,6 +9,11 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { MatSidenav } from '@angular/material/sidenav';
+import { NavbarComponent } from '../navbar/navbar.component';
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-sidebar',
   standalone: true,
@@ -19,9 +24,11 @@ import { MatSidenav } from '@angular/material/sidenav';
     MatListModule,
     MatIconModule,
     MatInputModule,
+    FontAwesomeModule,
     MatExpansionModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    NavbarComponent 
   ],
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css']
@@ -30,10 +37,42 @@ export class SidebarComponent {
   @ViewChild('drawer') drawer!: MatSidenav;
   @ViewChild('drawer1') drawer1!: MatSidenav;
   searchQuery: string = '';
- 
-  
+  faUser = faUserCircle; // Font Awesome Icon
+  isDropdownOpen = false;
+  isDesktopView: boolean = true;
+  showDropdown: boolean = false;
+  isMobile: boolean = window.innerWidth <= 768; // Mobile if screen <= 768px
 
-  isMobile: boolean = window.innerWidth <= 768;  // Mobile if screen <= 768px
+  constructor(private router: Router) {}
+
+  // Combined onResize Function
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    const width = window.innerWidth;
+    this.isMobile = width <= 768;
+    this.isDesktopView = width > 768;
+
+    if (!this.isMobile && this.drawer) {
+      this.drawer.open(); // Keep sidebar open on desktop
+    }
+  }
+
+  ngOnInit() {
+    this.onResize(); // Check on component load
+  }
+
+  // Toggle Profile Dropdown
+  toggleDropdown() {
+    this.isDropdownOpen = !this.isDropdownOpen;
+    this.showDropdown = !this.showDropdown;
+  }
+
+  logout() {
+    console.log("Logged out!");
+    this.isDropdownOpen = false;
+    localStorage.clear(); // Clear session or token
+    this.router.navigate(['/']); // Redirect to login
+  }
 
   companies = [
     { name: 'Solocon Capital', route: '/file-upload' },
@@ -46,7 +85,6 @@ export class SidebarComponent {
 
   filteredCompanies: any[] = this.companies;
 
-
   // Filter companies based on search input
   filterCompanies() {
     this.filteredCompanies = this.companies.filter((company) =>
@@ -56,7 +94,7 @@ export class SidebarComponent {
 
   // Close sidebar on mobile after selection
   closeSidebar() {
-    if (this.isMobile) {
+    if (this.isMobile && this.drawer1) {
       this.drawer1.close();
     }
   }
@@ -64,15 +102,5 @@ export class SidebarComponent {
   // Log when sidebar is closed
   sidebarClosed(): void {
     console.log('Sidebar closed');
-  }
-  
-
-  // Responsive: Check screen size on window resize
-  @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
-    this.isMobile = window.innerWidth <= 768;
-    if (!this.isMobile) {
-      this.drawer.open(); // Keep sidebar open on desktop
-    }
   }
 }

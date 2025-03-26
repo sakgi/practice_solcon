@@ -1,0 +1,111 @@
+/* Navbar Styles */
+.navbar {
+    width: 97%;
+    height: 60px;
+    background-color: #0F0D20;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Logo */
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Profile Icon Container */
+.profile-container {
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* Font Awesome Icon */
+.profile-icon {
+    font-size: 2rem;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.profile-icon:hover {
+    color: #1e90ff;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    color: white;
+    background-color: #0F0D20;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px;
+    display: none;
+    z-index: 1001;
+}
+
+/* Show the Dropdown */
+.dropdown-menu.show {
+    display: block;
+}
+
+/* Dropdown List */
+.dropdown-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-menu li {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dropdown-menu li:hover {
+    background-color: #1e293b;
+}
+
+
+@media (max-width: 768px) {
+    /* Navbar Adjustment for Mobile */
+    .navbar {
+        width: 90%; /* Slightly smaller width for mobile */
+        left:55%; /* Center the navbar */
+        height: 50px; /* Smaller height for mobile */
+        padding: 0 15px;
+    }
+
+    /* Profile Icon for Mobile */
+    .profile-icon {
+        font-size: 2.5rem; /* Slightly larger for better visibility */
+        color: #fff;
+    }
+
+    /* Profile Container for Better Tap Area */
+    .profile-container {
+        padding: 8px;
+    }
+
+    /* Dropdown Menu for Mobile */
+    .dropdown-menu {
+        top: 50px; /* Adjust according to navbar height */
+        right: 10px; /* Closer to the right side */
+        width: 120px; /* Smaller width for mobile */
+        font-size: 0.9rem; /* Slightly smaller font for mobile */
+        padding: 8px; /* Smaller padding */
+    }
+
+    /* Dropdown List Item for Mobile */
+    .dropdown-menu li {
+        padding: 8px;
+    }
+}

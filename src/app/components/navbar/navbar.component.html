@@ -1,0 +1,21 @@
+<nav class="navbar">
+    <div class="nav-left">
+      <h1 class="logo">
+        <!-- MyApp -->
+    </h1>
+    </div>
+    <div class="nav-right">
+      <!-- Profile Icon -->
+      <div class="profile-container" (click)="toggleDropdown()">
+        <fa-icon [icon]="faUser" class="profile-icon"></fa-icon>
+      </div>
+  
+      <!-- Dropdown Menu -->
+      <div class="dropdown-menu" [ngClass]="{ 'show': isDropdownOpen }">
+        <ul>
+          <li (click)="logout()">Logout</li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
