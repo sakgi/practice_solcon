@@ -1,0 +1,378 @@
+/* Container Setup */
+.sidenav-container {
+  height: 100vh;
+  border-radius: 0px;
+  display: flex;
+}
+/* Hover Effect for Icon and Text */
+mat-nav-list a.mat-list-item:hover {
+  background-color:  #1e293b;
+  transition: background-color 0.3s ease;
+}
+
+/* Specific to Icon and Text on Hover */
+mat-nav-list a.mat-list-item:hover mat-icon,
+mat-nav-list a.mat-list-item:hover span {
+  color: #38bdf8 !important; /* Light Blue for visibility */
+  transition: color 0.3s ease;
+}
+
+/* Icon and Text Default State */
+mat-nav-list a.mat-list-item mat-icon,
+mat-nav-list a.mat-list-item span {
+  color: white !important;
+  transition: color 0.3s ease;
+}
+
+
+span:hover {
+  background-color: #1e293b;
+}
+mat-expansion-panel-header:hover{
+  background-color: #1e293b;
+}
+/* Input styles */
+.search input {
+  color: white !important;
+  caret-color: white !important;
+  /* padding: 4px 8px !important;  */
+  margin: 0 !important;
+}
+/* Base style for list items */
+
+
+
+/* Label styles */
+.search-field mat-label {
+  color: rgba(255, 255, 255, 0.7);
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+mat-nav-list a.mat-list-item {
+    color: white !important;
+    background-color: #0F0D20 !important;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  mat-nav-list a.mat-list-item:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+  }
+  
+
+/* Sidebar Styling */
+.sidebar {
+  width: 280px;
+  background: #0F0D20;
+  color: white;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  border-radius: 0px !important;
+  transition: all 0.3s ease-in-out;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* Logo Container */
+.logo-container {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.logo {
+  width: 40%;
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+/* Expansion Panel */
+mat-expansion-panel {
+  background: #0F0D20 !important;
+  color: white !important;
+  border-radius: 0px !important;
+  margin-bottom: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  mat-expansion-panel-header {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    cursor: pointer;
+    color: white !important;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    mat-icon {
+      margin-right: 8px;
+      color: white !important;
+    }
+  }
+}
+
+/* Search Field */
+
+/* List Container */
+mat-list {
+  padding: 0;
+  width: 100%;
+  background: #0F0D20 !important;
+  color: white !important;
+  border-radius: 0px !important;
+}
+
+/* List Items */
+mat-list-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  font-size: 15px;
+  color: white !important;
+  opacity: 1 !important;
+  transition: background 0.3s ease;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+/* Set dark background for the list and list items inside the expansion panel */
+mat-expansion-panel mat-list {
+    background: #0F0D20 !important; /* Ensure it inherits the sidebar's dark background */
+    color: white !important;        /* Ensure text remains white */
+  }
+  
+  /* This applies directly to buttons inside mat-list */
+mat-list button.mat-button {
+    background-color: #0F0D20 !important; /* Apply dark background */
+    color: white !important;              /* Apply white text */
+    border-radius: 5px;                   /* Rounded corners */
+  }
+  
+  mat-list button.mat-button:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important; /* Hover effect */
+  }
+  
+  
+  mat-icon {
+    margin-right: 10px;
+    color: white !important;
+  }
+}
+
+/* Specific to Expansion Panel */
+mat-expansion-panel mat-list-item {
+  padding-left: 25px;
+}
+
+/* Content Area */
+.content {
+  flex-grow: 1;
+  padding: 20px;
+  background: #1e293b;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 240px;
+  }
+
+  .logo {
+    width: 100px;
+  }
+}
+
+/* @media (max-width: 768px) {
+  .sidebar {
+    width: 220px;
+    padding: 10px;
+  }
+
+  .logo {
+    width: 90px;
+  }
+
+  mat-expansion-panel {
+    font-size: 14px;
+  }
+
+  mat-list-item {
+    font-size: 14px;
+    padding: 10px;
+  }
+} */
+
+@media (max-width: 768px) {/* Container Setup for Mobile */
+  .sidenav-container1 {
+    height: 100vh;
+    border-radius: 0px;
+    /* display: flex; */
+  }
+  
+  /* Hover Effect for Icon and Text */
+  mat-nav-list a.mat-list-item:hover {
+    background-color: #1e293b;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Specific to Icon and Text on Hover */
+  mat-nav-list a.mat-list-item:hover mat-icon,
+  mat-nav-list a.mat-list-item:hover span {
+    color: #38bdf8 !important; /* Light Blue for visibility */
+    transition: color 0.3s ease;
+  }
+  
+  /* Icon and Text Default State */
+  mat-nav-list a.mat-list-item mat-icon,
+  mat-nav-list a.mat-list-item span {
+    color: white !important;
+    transition: color 0.3s ease;
+  }
+  
+  span:hover {
+    background-color: #1e293b;
+  }
+  
+  mat-expansion-panel-header:hover {
+    background-color: #1e293b;
+  }
+  
+  /* Input styles for Mobile */
+  .search1 input {
+    color: white !important;
+    caret-color: white !important;
+    margin: 0 !important;
+  }
+  
+  /* Label styles */
+  .search1 mat-label {
+    color: rgba(255, 255, 255, 0.7);
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  /* Base style for list items */
+  mat-nav-list a.mat-list-item {
+    color: white !important;
+    background-color: #0F0D20 !important;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  mat-nav-list a.mat-list-item:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+  }
+  
+  /* Sidebar Styling for Mobile */
+  .sidebar1 {
+    width: 240px;
+    background: #0F0D20;
+    color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    border-radius: 0px !important;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Logo Container for Mobile */
+  /* .logo-container1 {
+    text-align: center;
+    margin-bottom: 10px;
+  } */
+  
+
+/* Ensure the parent container is positioned relative */
+.logo-container1 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Position the close button in the top-right corner */
+.logo-container1 .close-button1 {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #f44336; /* Red background */
+  color: white; /* White icon color */
+  border: none;
+  /* padding: 10px; */
+  border-radius: 5px; /* Circular button */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effect */
+.logo-container1 .close-button1:hover {
+  background-color: #d32f2f; /* Darker red on hover */
+  transform: scale(1.1);
+}
+
+
+
+  .logo1 {
+    width: 50%;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+  }
+  
+  /* Expansion Panel for Mobile */
+  mat-expansion-panel {
+    background: #0F0D20 !important;
+    color: white !important;
+    border-radius: 0px !important;
+    margin-bottom: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  mat-expansion-panel-header {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    color: white !important;
+    transition: background 0.3s ease;
+  }
+  
+  /* Search Field for Mobile */
+  .search1 input {
+    font-size: 14px;
+    padding: 8px;
+  }
+  
+  /* Toolbar for Mobile */
+  .top-toolbar1 {
+    background: #0F0D20 !important;
+    color: white !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px;
+  }
+  
+  
+  /* Menu Button for Mobile */
+  .menu-button1 {
+    color: white !important;
+    margin-right: 10px;
+  }
+}  

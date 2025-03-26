@@ -1,0 +1,54 @@
+<div class="p-8 bg-gray-900 min-h-screen text-white">
+  <div class="flex justify-end p-4">
+    <div class="flex items-center space-x-2">
+      <span class="text-sm">
+        <!-- solcon -->
+      </span>
+      <div class="rounded-full bg-gray-700 p-2">
+        <!-- SA -->
+      </div>
+    </div>
+  </div>
+
+  <h1 class="text-3xl mb-4">COMPANY LISTS</h1>
+
+  <div class="p-4 bg-gray-800 rounded-lg">
+    <div class="grid grid-cols-3 gap-4">
+      <!-- Year Selection -->
+      <select [(ngModel)]="year" class="p-2 bg-gray-700 rounded" required>
+        <option [value]="null">Year</option>
+        <option *ngFor="let yr of years" [value]="yr">{{ yr }}</option>
+      </select>
+
+      <!-- Quarter Selection -->
+      <select [(ngModel)]="quarter" (change)="updateMonths()" class="p-2 bg-gray-700 rounded" required>
+        <option value="">Quarter</option>
+        <option value="Q1">Q1</option>
+        <option value="Q2">Q2</option>
+        <option value="Q3">Q3</option>
+        <option value="Q4">Q4</option>
+      </select>
+
+      <!-- Month Selection -->
+      <select [(ngModel)]="month" (click)="validateQuarter()" [disabled]="months.length === 0" class="p-2 bg-gray-700 rounded">
+        <option value="">Month</option>
+        <option *ngFor="let m of months" [value]="m">{{ m }}</option>
+      </select>
+    </div>
+
+    <!-- File Upload Input -->
+    <input 
+      type="file" 
+      id="fileInput"
+      accept="*/*" 
+      (change)="onFileSelected($event)" 
+      class="block w-full p-2 bg-gray-700 rounded mt-4" 
+    />
+
+    <!-- Buttons -->
+    <div class="flex space-x-4 mt-4">
+      <button (click)="uploadFile()" class="bg-blue-500 p-2 rounded">Upload Document</button>
+      <button (click)="clearForm()" class="bg-red-500 p-2 rounded">Clear</button>
+    </div>
+  </div>
+</div>

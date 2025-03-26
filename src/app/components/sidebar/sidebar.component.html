@@ -1,0 +1,112 @@
+<!-- DESKTOP VIEW -->
+<mat-sidenav-container class="sidenav-container" *ngIf="!isMobile">
+  
+  <!-- Sidebar -->
+  <mat-sidenav #drawer mode="side" class="sidebar" [opened]="true" (closedStart)="sidebarClosed()">
+    
+    <!-- Sidebar Header with Close Button -->
+    <div class="logo-container">
+      <img src="/assets/images/splash.jpg" alt="Company Logo" class="logo" />
+      <!-- <button mat-icon-button class="close-button" (click)="drawer.close()">
+        <mat-icon>close</mat-icon>
+      </button> -->
+    </div>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-icon>dashboard</mat-icon>
+        <span>Dashboard</span>
+      </mat-expansion-panel-header>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-icon>business</mat-icon>
+        <span>Company List</span>
+      </mat-expansion-panel-header>
+
+      <!-- Search Input -->
+      <mat-form-field class="search" appearance="outline">
+        <mat-label>Search Company</mat-label>
+        <input matInput [(ngModel)]="searchQuery" (input)="filterCompanies()" />
+      </mat-form-field>
+
+      <!-- Company List -->
+      <mat-nav-list>
+        <a mat-list-item *ngFor="let company of filteredCompanies" [routerLink]="company.route">
+          <mat-icon>domain</mat-icon>
+          <span>{{ company.name }}</span>
+        </a>
+      </mat-nav-list>
+    </mat-expansion-panel>
+  </mat-sidenav>
+
+  <!-- Main Content -->
+<mat-sidenav-content class="content">
+    <!-- <mat-toolbar  class="top-toolbar"> -->
+      <!-- <span>  -->
+        <!-- Poultry Disease Detection (Desktop) -->
+      <!-- </span>
+    </mat-toolbar> -->
+
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<!-- MOBILE VIEW -->
+<mat-sidenav-container class="sidenav-container1" *ngIf="isMobile">
+  
+  <!-- Sidebar -->
+  <mat-sidenav #drawer1 mode="over" class="sidebar1" (closedStart)="sidebarClosed()">
+    
+    <!-- Sidebar Header with Close Button -->
+      <div class="logo-container1">
+        <img src="/assets/images/splash.jpg" alt="Company Logo" class="logo1" />
+        <button mat-icon-button class="close-button1" (click)="drawer1.close()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-icon>dashboard</mat-icon>
+        <span>Dashboard</span>
+      </mat-expansion-panel-header>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-icon>business</mat-icon>
+        <span>Company List</span>
+      </mat-expansion-panel-header>
+
+      <!-- Search Input -->
+      <mat-form-field class="search1" appearance="outline">
+        <mat-label>Search Company</mat-label>
+        <input matInput [(ngModel)]="searchQuery" (input)="filterCompanies()" />
+      </mat-form-field>
+
+      <!-- Company List -->
+      <mat-nav-list>
+        <a mat-list-item *ngFor="let company of filteredCompanies" [routerLink]="company.route" (click)="closeSidebar()">
+          <mat-icon>domain</mat-icon>
+          <span>{{ company.name }}</span>
+        </a>
+      </mat-nav-list>
+    </mat-expansion-panel>
+  </mat-sidenav>
+
+  <!-- Main Content -->
+  <mat-sidenav-content class="content1">
+    <mat-toolbar color="primary" class="top-toolbar1">
+      <button mat-icon-button (click)="drawer1.open()" class="menu-button1">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>
+        <!-- Poultry Disease Detection (Mobile) -->
+      </span>
+    </mat-toolbar>
+
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

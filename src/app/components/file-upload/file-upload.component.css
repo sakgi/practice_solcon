@@ -1,0 +1,138 @@
+/* General Styles */
+:host {
+    display: block;
+    padding: 2rem;
+    background-color: #0f172a; /* Dark background */
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: #f1f5f9;
+  }
+  
+  /* Header Section */
+  .header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+    align-items: center;
+  }
+  
+  .header-text {
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+    color: #cbd5e1;
+  }
+  
+  .avatar {
+    background-color: #1e293b;
+    padding: 0.5rem;
+    border-radius: 50%;
+    color: #f1f5f9;
+  }
+  
+  /* Title Section */
+  h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  p {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin-bottom: 2rem;
+  }
+  
+  /* Form Container */
+  .form-container {
+    background-color: #1e293b;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Grid Layout for Select Inputs */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  
+  /* Select and Input Styles */
+  select, input[type="file"] {
+    padding: 0.75rem;
+    background-color: #0f172a;
+    color: #f1f5f9;
+    border: 1px solid #334155;
+    border-radius: 0.5rem;
+    outline: none;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  /* Hover and Focus States */
+  select:hover, input[type="file"]:hover,
+  select:focus, input[type="file"]:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
+  }
+  
+  /* File Input Spacing */
+  input[type="file"] {
+    margin-top: 1rem;
+  }
+  
+  /* Button Styles */
+  button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+  }
+  
+  /* Primary Button */
+  button.bg-blue-500 {
+    margin-top: 5%;
+    background-color: #3b82f6;
+    color: white;
+    margin-right: 5%;
+  }
+  
+  /* Danger Button */
+  button.bg-red-500 {
+    background-color: #ef4444;
+    color: white;
+  }
+  
+  /* Button Hover and Active States */
+  button:hover {
+    opacity: 0.9;
+  }
+  
+  button:active {
+    transform: scale(0.95);
+  }
+  
+  /* Spacing for Button Group */
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+    
+    button {
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+  }
+  
